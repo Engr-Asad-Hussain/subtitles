@@ -1,0 +1,208 @@
+1
+00:00:00,000 --> 00:00:03,030
+Before we get too deep into pre-train models,
+
+2
+00:00:03,030 --> 00:00:06,270
+let's look at the types of computer vision models there are.
+
+3
+00:00:06,270 --> 00:00:09,090
+We will mainly focus on classification,
+
+4
+00:00:09,090 --> 00:00:12,030
+detection, and segmentation here.
+
+5
+00:00:12,030 --> 00:00:17,355
+Now, there are other various types or sub-types here as well.
+
+6
+00:00:17,355 --> 00:00:20,190
+Pose estimation or text recognition,
+
+7
+00:00:20,190 --> 00:00:24,840
+for example, might not fit neatly into these categories.
+
+8
+00:00:24,840 --> 00:00:29,775
+Deep learning also has generation of content with GANs as well,
+
+9
+00:00:29,775 --> 00:00:32,805
+although that's not really applicable here.
+
+10
+00:00:32,805 --> 00:00:35,760
+First, let us look at classification.
+
+11
+00:00:35,760 --> 00:00:39,210
+Classification determines a given class that
+
+12
+00:00:39,210 --> 00:00:42,765
+an image or an object in an image belongs to.
+
+13
+00:00:42,765 --> 00:00:48,180
+This can scale from a simple yes/no answer such as hotdog versus
+
+14
+00:00:48,180 --> 00:00:53,815
+not hotdog up to potentially thousands of classes like a type of animal.
+
+15
+00:00:53,815 --> 00:01:01,160
+The ImageNet dataset often used to pre-train neural networks contains 20,000 classes.
+
+16
+00:01:01,160 --> 00:01:06,425
+The most well-known competition with ImageNet uses 1,000 of these classes,
+
+17
+00:01:06,425 --> 00:01:10,645
+90 of which are just for different dog breeds.
+
+18
+00:01:10,645 --> 00:01:13,340
+These usually have some probability by
+
+19
+00:01:13,340 --> 00:01:17,660
+class so that the highest probability is the determined class,
+
+20
+00:01:17,660 --> 00:01:22,300
+but you can also see the top five predictions, for example.
+
+21
+00:01:22,300 --> 00:01:25,070
+In detection, this gets used in
+
+22
+00:01:25,070 --> 00:01:28,520
+determining the objects appear at different places in an image.
+
+23
+00:01:28,520 --> 00:01:30,200
+At its most basic,
+
+24
+00:01:30,200 --> 00:01:35,980
+this could be similar to the yes/no classification of whether an object appears at all.
+
+25
+00:01:35,980 --> 00:01:38,565
+Typically, it's more advanced than this,
+
+26
+00:01:38,565 --> 00:01:43,540
+both detecting an object appears as well as where an image it appears.
+
+27
+00:01:43,540 --> 00:01:46,850
+Oftentimes, this will draw bounding boxes around
+
+28
+00:01:46,850 --> 00:01:51,140
+the detected objects so the output may be related to x,
+
+29
+00:01:51,140 --> 00:01:54,940
+y coordinates, as well as height and width of the object.
+
+30
+00:01:54,940 --> 00:01:58,670
+Usually, there's some form of classification built on,
+
+31
+00:01:58,670 --> 00:02:00,245
+depending on the network,
+
+32
+00:02:00,245 --> 00:02:04,270
+so that these bounding boxes also note which class they are.
+
+33
+00:02:04,270 --> 00:02:07,745
+These bounding boxes also have a confidence threshold,
+
+34
+00:02:07,745 --> 00:02:11,000
+so you can throw out low confidence predictions.
+
+35
+00:02:11,000 --> 00:02:13,430
+Next up is segmentation.
+
+36
+00:02:13,430 --> 00:02:18,925
+Segmentation classify sections of an image by classifying each and every pixel.
+
+37
+00:02:18,925 --> 00:02:21,290
+Once again, this can be simple,
+
+38
+00:02:21,290 --> 00:02:25,595
+like road versus not road or there may be tens of classes,
+
+39
+00:02:25,595 --> 00:02:27,830
+such as road, lay line,
+
+40
+00:02:27,830 --> 00:02:31,235
+grass, tree, sky, pedestrian.
+
+41
+00:02:31,235 --> 00:02:36,730
+You get it. Each and every pixel in the image will be put into a class,
+
+42
+00:02:36,730 --> 00:02:41,360
+although light classification, they may have different probabilities by pixel.
+
+43
+00:02:41,360 --> 00:02:47,395
+Now, these are often post-processed in some way to avoid phantom classes here and there.
+
+44
+00:02:47,395 --> 00:02:50,805
+There's also a subset of segmentation they consider,
+
+45
+00:02:50,805 --> 00:02:54,380
+semantic segmentation versus instance segmentation.
+
+46
+00:02:54,380 --> 00:02:59,630
+Semantic segmentation just focuses on classifying every pixel into a given class.
+
+47
+00:02:59,630 --> 00:03:04,600
+So two objects of the same class in an image are looked at the same.
+
+48
+00:03:04,600 --> 00:03:07,970
+On the other hand, instance segmentation actually
+
+49
+00:03:07,970 --> 00:03:11,795
+determines objects of the same class to be separate instances.
+
+50
+00:03:11,795 --> 00:03:15,940
+So two bikes could be separately tracked through a video.
+
+51
+00:03:15,940 --> 00:03:19,040
+We've looked at different types of computer vision models.
+
+52
+00:03:19,040 --> 00:03:24,150
+Now, let's look at some example architectures for computer vision models.
+
