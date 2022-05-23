@@ -2,7 +2,7 @@
 subtitles for bash scripting assignment
 
 ## Challenge Instructions
-Write modular shell scripts that automate the subtitles in different files. Clone this repository which contains 3 subtitles files develop a script that gives the [following](#Output) output in single file.
+Write modular shell scripts that automate the subtitles in different files. This repository which contains 3 different subtitles files. Develop a script that automatically clones the repository and gives the [following](#Output) output in single file.
 
 ## Output
 output.txt
